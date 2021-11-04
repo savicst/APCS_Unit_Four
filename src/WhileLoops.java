@@ -11,9 +11,20 @@ public class WhileLoops {
      * @return A string consisting of either the range of numbers or Invalid Input
      */
     public static String fromHereToThere(int num1, int num2) {
-
-        return ""; // update or remove this line. It is only there so the tests do not show an error.
+        if (num1 > num2){
+            return "Invalid input";
+        }
+        else {
+            String nums = "";
+            int number = num1;
+            while (number < num2) {
+                number++;
+                nums += number + " ";
+            }
+            return nums; // update or remove this line. It is only there so the tests do not show an error.
+        }
     }
+
 
     /**
      * Use a while loop to allow the user to enter positive or negative integers. The loop will exit
