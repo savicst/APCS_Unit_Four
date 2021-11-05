@@ -61,6 +61,7 @@ public class WhileLoops {
         int count = 0;
         int mini = Integer.MIN_VALUE;
         int maxi = Integer.MAX_VALUE;
+
         while (count < 5){
             System.out.print("Number: ");
             int newNum = scan.nextInt();
