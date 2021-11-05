@@ -15,13 +15,12 @@ public class WhileLoops {
             return "Invalid input";
         }
         else {
-            String nums = "";
-            int number = num1;
-            while (number < num2) {
-                number++;
-                nums += number + " ";
+            String nums = "" ;
+            while (num1 < num2) {
+                nums += num1 + " ";
+                num1++;
             }
-            return nums; // update or remove this line. It is only there so the tests do not show an error.
+            return nums + num2 + " "; // update or remove this line. It is only there so the tests do not show an error.
         }
     }
 
@@ -32,8 +31,24 @@ public class WhileLoops {
      * @return - A string showing how many positive and negative numbers were entered by the user.
      */
     public static String countPosAndNeg() {
+        Scanner scan = new Scanner(System.in);
 
-        return ""; // update or remove this line. It is only there so the tests do not show an error.
+        int num;
+        int negSum = 0;
+        int posSum = 0;
+        System.out.println("Enter a positive or negative number or 0 to quit:");
+        num = scan.nextInt();
+        while (num != 0){
+            if (num > 0){
+                posSum ++;
+            }
+            else {
+                negSum ++;
+            }
+                System.out.println("Enter a positive or negative number or 0 to quit:");
+                num = scan.nextInt();
+        }
+        return "There were " + posSum + " positive and " + negSum + " negative numbers"; // update or remove this line. It is only there so the tests do not show an error.
     }
 
     /**
@@ -42,8 +57,23 @@ public class WhileLoops {
      * @return A string giving the minimum and maximum. Ex. "The Max value is: 45\nThe Min value is: -87"
      */
     public static String findMinAndMax() {
+        Scanner scan = new Scanner(System.in);
+        int count = 0;
+        int mini = Integer.MIN_VALUE;
+        int maxi = Integer.MAX_VALUE;
+        while (count < 5){
+            System.out.print("Number: ");
+            int newNum = scan.nextInt();
+            if (newNum > maxi){
+                maxi = newNum;
+            }
+            else if (newNum < mini){
+                mini = newNum;
+            }
+            count++;
+        }
 
-       return ""; // update or remove this line. It is only there so the tests do not show an error.
+       return "Max value is: " + maxi + ". Min value is: " + mini; // update or remove this line. It is only there so the tests do not show an error.
     }
 
     /**
