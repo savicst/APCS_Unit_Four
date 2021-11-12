@@ -44,11 +44,32 @@ public class NestedLoops {
         return returnString;
     }
     public static void main(String args[]){
-        for (int i=1; i<=5; i++){
-            for (int j=1; j<=i-1; j++){
-                System.out.print(" l");
+        for (int i=0; i<=5; i++) {
+            for (int h = 4; h >= i; h--) {
+                System.out.print(" ");
             }
+            int g=i;
+            for (int j = 1; j <= i; j++) {
+                System.out.print(g);
+                g--;
+            }
+            System.out.println();
+        }
+        //first half done!
+        int x = 4;
+        for (int i=1; i<=4; i++){
+           for (int h=1; h<=i; h++){
+               System.out.print(" ");
+           }
+           int g = x;
+           for (int j = 4; j>=i; j--){
+               System.out.print(g);
+               g--;
+           }
+            x--;
+            System.out.println();
+        }
         }
     }
-}
+
 
