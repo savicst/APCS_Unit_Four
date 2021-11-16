@@ -2,28 +2,36 @@ import java.util.Scanner;
 public class Disemvoweling {
     public static String disemDouble(String s){
        String returnStatement = "";
-        for (int i=0; i<=s.length()-2; i++){
+        for (int i=0; i<s.length()-1; i++){
             if (s.substring(i, i+1).equals(s.substring(i+1, i+2))) {
-
             }
             else{
                     returnStatement += s.substring(i, i + 1);
                 }
-
             //to not get out of bounds maybe do it with no second number
         }
-        returnStatement += s.substring(s.length()-1);
+            if (s.substring(s.length()-1,s.length()).equals(s.substring(s.length()))){
+                returnStatement+= s.substring(s.length());
+            }
+            else{
+                returnStatement += s.substring(s.length()-1);
+            }
+
+        //returnStatement += s.substring(s.length()-1);
         return returnStatement;
     }
     public static String disemVowel(String s){
         String vowels = "aeiouAEIOU";
         String returnStatement = "";
-        for (int i=0; i<=s.length()-2; i++){
+        for (int i=0; i<s.length(); i++){
             if (vowels.indexOf(s.substring(i, i + 1))==-1){
                 returnStatement += (s.substring(i, i + 1));
             }
         }
-        returnStatement += s.substring(s.length()-1);
+        if (vowels.indexOf(s.substring(s.length()))==-1){
+            returnStatement += (s.substring(s.length()));
+        }
+       // returnStatement += s.substring(s.length()-1);
         return returnStatement;
     }
     public static void main(String[] args){
