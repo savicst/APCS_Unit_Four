@@ -43,7 +43,7 @@ public class NestedLoops {
         }
         return returnString;
     }
-    public static void main(String args[]){
+    public static void main(String[] args){
         for (int i=0; i<=5; i++) {
             for (int h = 4; h >= i; h--) {
                 System.out.print(" ");
